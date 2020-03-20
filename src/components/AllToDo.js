@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AllToDo = props => {
   return (
@@ -7,7 +8,9 @@ const AllToDo = props => {
         return (
           <div key={oneList._id}>
             <h2>{oneList.title}</h2>
-            <p>{oneList.body}</p>
+            <Link to={`/${oneList._id}`}>
+              <button>See details</button>
+            </Link>
           </div>
         );
       })}
